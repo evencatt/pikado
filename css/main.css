@@ -1,0 +1,537 @@
+@font-face {
+    font-family:SFProDisplay-Regular;
+    src: local("SFProDisplay-Regular"),
+         url('../fonts/SFProDisplay-Regular.woff') format("woff"),
+         url('../fonts/SFProDisplay-Regular.woff2') format("woff2");
+    font-weight: normal;
+  }
+  @font-face {
+    font-family:SFProDisplay-Semibold;
+    src: local("SFProDisplay-Semibold"),
+         url('../fonts/SFProDisplay-Semibold.woff') format("woff"),
+         url('../fonts/SFProDisplay-Semibold.woff2') format("woff2");
+    font-weight: bold;
+}
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'SFProDisplay-Regular', sans-serif;
+    background: #E5E5E5;
+}
+
+header{
+    background: #FA8C16;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+.header__wrapper {
+    max-width:1200px;
+    margin: auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo {
+    margin-left: 60px;
+}
+.header__nav {
+    /* Благодаря этим св-ам слева от списка всегда будет 60px а справа всегда будет авто-настройка пространства */
+    margin-left: 60px;
+    margin-right: auto;
+    
+}
+.header__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-gap: 15px;
+    
+}
+.header__menu-item {
+}
+.header__menu-link {
+    text-decoration: none;
+    color: #FAFAFA;
+    font-size: 14px;
+    line-height: 22px;
+}
+.header__search {
+    max-width: 237px;
+    width:50%;
+    height:32px;
+    position: relative;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+
+}
+
+.header__search-input {
+    width:80%;
+    height: 100%;
+    border:none;
+    font-size: 14px;
+    line-height: 22px;
+    padding-left: 12px;
+}
+.header__search-button {
+    height:100%;
+    width:20%;
+    position: absolute;
+    right:0;
+    top:0;
+    border:none;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__search-icon {
+}
+
+.search-input::-moz-placeholder {
+    color: #bfbfbf; /* Цвет подсказывающего текста */
+}
+.search-input::-webkit-input-placeholder {
+     color: #bfbfbf;
+    } 
+.search-input:-ms-input-placeholder { 
+    color: #bfbfbf;
+}
+.search-input::-ms-input-placeholder {
+     color: #bfbfbf;
+}
+.search-input::placeholder {
+     color: #bfbfbf;
+} 
+
+.menu-toggle{
+    display: none;
+}
+
+.content{
+    max-width: 1200px;
+    width: 90%;
+    /* позволяет выровнять элементы по центру */
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.main__posts {
+    width: 67%;
+}
+
+.post {
+    background: white;
+    border: 1px solid #E8E8E8;
+    margin-bottom: 30px;
+}
+
+.main__post-body{
+    padding: 35px 35px 0 35px;
+}
+
+.main__post-title {
+    font-family: 'SFProDisplay-Semibold', sans-serif;
+    margin: 0;
+    margin-bottom: 19px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+.main__post-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #262626;
+}
+
+.main__tags{
+    margin-bottom: 22px;
+}
+
+.main__post-tag {
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #BFBFBF;
+}
+
+.main__post-footer {
+    background: #FAFAFA;
+    border-top: 1px solid #E8E8E8;
+    display: flex;
+    justify-content: space-between;
+    padding:13px 35px 13px 35px;
+    width: 100%;
+}
+
+.main__post-footer .icon{
+    fill: #8c8c8c;
+}
+
+.main__post-buttons{
+    display: flex;
+    align-items: center;
+    column-gap: 29px;
+}
+
+.main__post-button {
+    cursor: pointer;
+    /* transparent означает прозрачный фоновый цвет */
+    background-color: transparent; 
+    border: none;
+    color: #8c8c8c;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    color: #8C8C8C;
+}
+
+.main__post-button:active, .main__post-button:focus {
+    outline: none;
+  }
+.main__post-button::-moz-focus-inner {
+    border: 0;
+  }
+
+.main__likes-count, .main__comments-count{
+    margin-left: 6px;
+}
+
+.main__post-author {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+.main__author-about {
+}
+.main__author-name {
+    font-family: 'SFProDisplay-Semibold', sans-serif;
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    color: #8C8C8C;
+    text-decoration: none;
+}
+.main__post-time {
+    text-align: right;
+    font-size: 12px;
+    line-height: 20px;
+    color: #BFBFBF;
+}
+.main__author-link {
+}
+.main__author-avatar {
+    width: 34px;
+    height: 34px;
+    margin-left: 9px;
+    border-radius: 4px;
+}
+
+.main__sidebar {
+    width:31%;
+}
+
+/* SIDEBAR */
+.sidebar {
+}
+.sidebar__user {
+    background: #FAFAFA;
+    border: 1px solid #e8e8e8;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar__user-info {
+    display:flex;
+    align-items: center;
+    text-decoration: none;
+}
+.sidebar__user-ava {
+    /* Сокращенно brs50% */
+    border-radius: 50%;
+    margin-right: 17px;
+}
+.sidebar__user-name {
+    font-family: 'SFProDisplay-Semibold', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #595959;
+}
+.sidebar__user-exit {
+}
+
+.sidebar__icon-exit{
+    width: 20px;
+    height: 20px;
+    fill: #000;
+}
+
+.sidebar__nav {
+    background: white;
+}
+.sidebar__menu {
+    margin: 0;
+    padding:0;
+    list-style: none;
+    border: 1px solid #E8E8E8;
+    border-top: none;
+}
+.sidebar__menu-item {
+}
+.sidebar__menu-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 22px;
+    color: #595959;
+    padding: 16px 48px;
+    width: 100%;
+}
+
+.sidebar__menu-link:hover{
+    background-color:#FFFBE6;
+}
+
+/* active стили при нажатии и удерживании */
+.sidebar__menu-link:active {
+    background-color: #fffbe6;
+    border-right: 3px solid #FAAD14;
+}
+
+.button {
+    background-color: #faad14;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 13px;
+    border:none
+}
+.sidebar__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+.icon-fire{
+    fill:#fff;
+    width: 11px;
+    height: 13px;
+    margin-right: 10px;
+}
+
+/* POST OF THE DAY */
+.daypost {
+    margin-bottom: 20px;
+}
+.daypost__header {
+    background: #FAFAFA;
+    padding: 23px 25px;
+    border: 1px solid #E8E8E8;
+}
+.daypost__title {
+    margin: 0;
+    font-style: normal;
+    font-family: 'SFProDisplay-Semibold', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #595959;
+}
+.daypost__body {
+    padding: 22px 40px 30px 25px;
+    background-color:white;
+    border: 1px solid #E8E8E8;
+    border-top: none;
+}
+.daypost__subtitle {
+    text-decoration: none;
+    font-family: 'SFProDisplay-Semibold', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #D48806;
+    
+}
+.daypost__text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #262626;
+}
+
+/* PROMO */
+.promo{
+    display: block;
+    background: #fff url('../img/promo-img.jpg') no-repeat center center / cover;
+    width: 100%;
+    height: 260px;
+    border: 1px solid #e8e8e8;
+    position: relative;
+    margin-top: 20px;
+}
+
+.promo:before{
+    content:'Реклама';
+    position: absolute;
+    top:0;
+    right:0;
+    background: #c4c4c4 ;
+    padding-left: 26px;
+    padding-right: 26px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.main__posts {
+}
+.main__add-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__add-title, .main__add-text {
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    padding: 23px 30px;
+    margin-bottom: 16px;
+}
+.main__add-text {
+    min-height:362px;
+}
+.main__add-button {
+    width: 100%;
+    width: 370px;
+    margin-right: 2%;
+}
+.button {
+    cursor: pointer;
+}
+.main__button-outline{
+    cursor: pointer;
+    width: 125px;
+    height: 50px;
+    background-color:white;
+    border:1px solid #ffc53d;
+    border-radius: 4px;
+    color: #ffc53d;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 1%;
+}
+
+.main__button-outline .icon{
+    width: 14px;
+    height: 11px;
+    fill: #ffc53d;
+}
+
+.main__add-post .main__button-outline{
+    margin-right: 1%;
+}
+
+@media (max-width:990px){
+    .menu-toggle{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        margin-left: 12px;
+        margin-right: 15px;
+    }
+    .menu-toggle span{
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+    }
+    header{
+        position:fixed;
+        z-index:100;
+        top:0;
+        left:0;
+        right:0;
+        width: 100%;
+    }
+    .content{
+        margin-top: 94px;
+        margin-bottom: 60px;
+    }
+    .sidebar{
+        position: fixed;
+        z-index: 101;
+        top: 64px;
+        right: 0;
+        bottom: 0;
+        /* Высота sidebarа высчитывается исходя из его 100% высоты - высота header и header__nav который оказался снизу */
+        height: calc(100% - 64px);
+        max-width:320px;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);
+        padding: 30px;
+        transform: translateX(100%);
+        transition: transform 0.2s;
+        overflow-y: auto;
+    }
+    .sidebar.visible{
+        transform: translateX(0);
+    }
+    .main__posts{
+        width: 100%;
+    }
+    .header__nav{
+        display: none;
+    }
+    .header__menu{
+        width: 90%;
+        margin: auto;
+    }
+    
+    
+}
+
+@media (max-width:576px){
+    .main__post-footer{
+        flex-direction: column;
+    }
+    .main__post-author{
+        margin-top: 15px;
+    }
+    .main__author-avatar{
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .main__author-about{
+        order:2;
+        text-align: left;
+    }
+    .main__add-buttons{
+        flex-direction: column;
+    }
+    .main__add-button{
+        width: 100%;
+    }
+    .main__button-outline{
+        width: 100%;
+    }
+}
